@@ -1,0 +1,9 @@
+﻿@page
+@model AulaRazorPages.Pages.IndexModel
+@{
+    ViewData["Title"] = Model.Title; //"My First APP from html";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<a asp-page="/Movies/Index" class="btn btn-primary" >Movies</a>

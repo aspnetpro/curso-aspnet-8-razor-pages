@@ -1,0 +1,7 @@
+﻿@page "/movie/{permalink}"
+@model AulaRazorPages.Pages.Movies.DetailsModel
+@{
+    ViewData["Title"] = Model.Movie.Name;
+}
+
+<h1>@Model.Movie.Name</h1>

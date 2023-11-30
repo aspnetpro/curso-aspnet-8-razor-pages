@@ -1,0 +1,16 @@
+﻿@page "/my-movies-2"
+@model AulaRazorPages.Pages.Movies.IndexModel
+@{
+    ViewData["Title"] = "My Movies";
+}
+
+<h1>My Movies</h1>
+
+<ul class="list-group">
+    @foreach (var movie in Model.Movies)
+    {
+        <li class="list-group-item">
+            <a asp-page="/Movies/Details" asp-route-permalink="@movie.Permalink">@movie.Name</a>
+        </li>
+    }
+</ul>

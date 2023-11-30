@@ -1,0 +1,45 @@
+﻿@page "/contact"
+@model AulaRazorPages.Pages.ContactModel
+@{
+    ViewData["Title"] = "Contact Page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (ViewData["MessageSuccess"] != null)
+{
+    <div class="alert alert-success">
+        @ViewData["MessageSuccess"]
+    </div>
+}
+
+<form method="post" class="col-4">
+    <div class="mb-3">
+        <label asp-for="ContactForm!.Name" class="form-label">Name</label>
+        <input asp-for="ContactForm!.Name" type="text" class="form-control" id="Name">
+        <span asp-validation-for="ContactForm!.Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ContactForm!.Email" class="form-label">Email</label>
+        <input asp-for="ContactForm!.Email" type="email" class="form-control" id="Email">
+        <span asp-validation-for="ContactForm!.Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ContactForm!.Subject" class="form-label">Subject</label>
+        <input asp-for="ContactForm!.Subject" type="text" class="form-control" id="Subject">
+        <span asp-validation-for="ContactForm!.Subject" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ContactForm!.Message" class="form-label">Message</label>
+        <textarea asp-for="ContactForm!.Message" class="form-control" id="Message"></textarea>
+        <span asp-validation-for="ContactForm!.Message" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@section Scripts {
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation/localization/messages_pt_BR.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
